@@ -1,0 +1,34 @@
+.mood-checkin {
+  margin-bottom: 1.5rem;
+}
+
+.mood-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.mood-btn {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  padding: 0.5rem;
+  background: #f9f9f9;
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.mood-btn .label {
+  font-size: 0.75rem;
+}
+
+.mood-btn.selected,
+.mood-btn:hover {
+  background: #dfefff;
+  border: 1px solid #2c3e50;
+} 

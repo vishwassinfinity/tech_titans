@@ -1,0 +1,11 @@
+.coping-tools ul {
+  list-style-type: disc;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-left: 1.25rem;
+}
+
+.coping-tools li {
+  margin-bottom: 0.5rem;
+} 

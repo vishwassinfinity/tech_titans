@@ -1,0 +1,17 @@
+.sentiment-input {
+  margin-bottom: 1.5rem;
+}
+
+.sentiment-input textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  font-size: 1rem;
+}
+
+.sentiment-input button {
+  margin-top: 0.5rem;
+} 
