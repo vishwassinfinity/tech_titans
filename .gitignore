@@ -1,0 +1,33 @@
+# macOS
+.DS_Store
+
+# Node (front-end)
+front-end/node_modules/
+front-end/.pnp/
+front-end/.pnp.js
+front-end/coverage/
+front-end/build/
+front-end/npm-debug.log*
+front-end/yarn-debug.log*
+front-end/yarn-error.log*
+
+# Python (back-end)
+back-end/__pycache__/
+back-end/*.py[cod]
+back-end/*.egg-info/
+back-end/build/
+back-end/dist/
+back-end/.eggs/
+back-end/.venv/
+back-end/venv/
+
+# Environment files
+*.env
+*.env.*
+
+# Logs
+*.log
+
+# IDE specific
+.vscode/
+.idea/ 
