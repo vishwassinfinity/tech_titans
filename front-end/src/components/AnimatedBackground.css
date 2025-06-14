@@ -1,0 +1,164 @@
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  background: linear-gradient(45deg, #0f172a, #1e1b4b);
+}
+
+/* Floating shapes */
+.floating-shape {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  background: linear-gradient(
+    45deg,
+    hsla(var(--hue), 95%, 50%, 0.3),
+    hsla(calc(var(--hue) + 60), 95%, 50%, 0.3)
+  );
+  filter: blur(3px);
+  animation: float var(--duration) ease-in-out infinite;
+  animation-delay: var(--delay);
+  transform: scale(var(--scale));
+  left: var(--start-pos);
+  top: -150px;
+}
+
+@keyframes float {
+  0% {
+    transform: scale(var(--scale)) translate(0, -150px) rotate(0deg);
+  }
+  50% {
+    transform: scale(var(--scale)) translate(100px, 50vh) rotate(180deg);
+  }
+  100% {
+    transform: scale(var(--scale)) translate(0, 120vh) rotate(360deg);
+  }
+}
+
+/* Gradient overlay */
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, 
+    rgba(15, 23, 42, 0) 0%,
+    rgba(15, 23, 42, 0.2) 50%,
+    rgba(15, 23, 42, 0.5) 100%
+  );
+  animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* Interactive particles */
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  left: var(--x);
+  top: var(--y);
+  opacity: 0;
+  animation: particle var(--duration) ease-out infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes particle {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  20% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+/* Grid overlay */
+.grid-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 1px;
+  opacity: 0.1;
+}
+
+.grid-cell {
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1));
+  animation: gridPulse 4s ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes gridPulse {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* Mouse interaction effect */
+.animated-background::after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, 
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.animated-background:hover::after {
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .floating-shape {
+    width: 100px;
+    height: 100px;
+  }
+
+  .grid-overlay {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+} 
