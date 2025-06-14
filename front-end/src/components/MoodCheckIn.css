@@ -31,4 +31,13 @@
 .mood-btn:hover {
   background: #dfefff;
   border: 1px solid #2c3e50;
+}
+
+.MuiToggleButton-root:hover {
+  transform: scale(1.08);
+  transition: transform 0.2s ease;
+}
+
+.MuiToggleButton-root {
+  transition: transform 0.2s ease;
 } 
